@@ -16,6 +16,7 @@ public class ModelStore implements IModelChanger{
 
     public Scene GetScena(int id) {
 
+        return null;
     }
 
 

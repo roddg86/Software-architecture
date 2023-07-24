@@ -1,5 +1,7 @@
 package ModelElements;
 
+import javafx.geometry.Point3D;
+
 public class Camera {
     public Point3D Location;
     public Angle3D Angle;
