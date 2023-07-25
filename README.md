@@ -119,3 +119,7 @@ UML происходит от Unified Modeling Language,
 [Java Factory Method Фабричный Метод | Design Patterns](https://www.youtube.com/watch?v=X5G67aWO7CA&list=PLKP3l9fd3KUFbrccxZMI0z3CgRdBDCp-g)  
 [Factory Method Pattern | В чем суть?](https://habr.com/ru/articles/556512/)  
 [Factory Patterns - Simple Factory Pattern](https://www.codeproject.com/Articles/1131770/Factory-Patterns-Simple-Factory-Pattern)
+
+### Объектно-ориентированные паттерны
+
+[Паттерны проектирования программ на языке Java](https://www.youtube.com/playlist?list=PLKP3l9fd3KUFbrccxZMI0z3CgRdBDCp-g)
