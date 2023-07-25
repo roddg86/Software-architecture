@@ -5,23 +5,31 @@ import ModelElements.Flash;
 import ModelElements.PoligonalModel;
 import ModelElements.Scene;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ModelStore implements IModelChanger{
-    public PoligonalModel Models;
-    public Scene Scenes;
-
-    public Flash Flashes;
-
-    public Camera Cameras;
+    private List<Scene> scenes;
+    private List<PoligonalModel> models;
+    private List<Flash> flashes;
+    private List<Camera> cameras;
     private IModelChangedObserver changedObserver;
 
-    public Scene GetScena(int id) {
+    public ModelStore() {
+        scenes = new ArrayList<>();
+        models = new ArrayList<>();
+        flashes = new ArrayList<>();
+        cameras = new ArrayList<>();
+    }
+
+    public Scene getScene(int id) {
 
         return null;
     }
 
 
     @Override
-    public void NotifyChange(IModelChanger sender) {
+    public void notifyChange(IModelChanger sender) {
 
     }
 

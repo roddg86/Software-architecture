@@ -1,8 +1,12 @@
 package ModelElements;
 
 
-import javafx.geometry.Point3D;
+import Stuff.Point3D;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Poligon {
-    public Point3D Points;
+
+    public List<Point3D> points = new ArrayList<>();
 }
