@@ -122,4 +122,23 @@ UML происходит от Unified Modeling Language,
 
 ### Объектно-ориентированные паттерны
 
-[Паттерны проектирования программ на языке Java](https://www.youtube.com/playlist?list=PLKP3l9fd3KUFbrccxZMI0z3CgRdBDCp-g)
+[Паттерны проектирования программ на языке Java](https://www.youtube.com/playlist?list=PLKP3l9fd3KUFbrccxZMI0z3CgRdBDCp-g)  
+
+### SOLID
+
+SRP: Single Responsibility Principle. Принцип единственной ответственности  
+OCP: Open-Closed Principle. Принцип открытости или закрытости  
+LSP: Liskov Substitution Principle. Принцип подстановки Барбары Лисков  
+ISP: Interface Segregation Principle. Принцип разделения интерфейсов  
+DIP: Dependency Inversion Principle. Принцип инверсии зависимости  
+
+SRP:  
+Один класс-метод делает одно действие  
+OCP:   
+Класс открыт для расширений, но закрыт от модификаций  
+LSP:  
+Обратно совместимый и переносимый код  
+ISP:   
+Не надо делать интерфейсы с огромным количеством методов разных по ответственности  
+DIP:  
+Использовать интерфейсы что-бы не допустить циклических зависимостей между классами  
