@@ -21,7 +21,7 @@ public class Printer {
     }
 }
 
-public class Main {
+public class datamapper {
     public static void main(String[] args) {
         Text myText = new Text("Hello, world!");
         Printer myPrinter = new Printer();

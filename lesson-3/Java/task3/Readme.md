@@ -42,7 +42,7 @@ public class Square extends Rectangle {
     }
 }
 
-public class Main {
+public class datamapper {
     public static void main(String[] args) {
         Rectangle rect = new Square();
         rect.setWidth(5);

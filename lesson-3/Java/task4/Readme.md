@@ -29,7 +29,7 @@ public class RobotWorker implements Worker {
     }
 }
 
-public class Main {
+public class datamapper {
     public static void main(String[] args) {
         Worker worker = new RobotWorker();
         worker.work();

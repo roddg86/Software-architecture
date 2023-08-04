@@ -1,0 +1,35 @@
+@startuml
+package datamapper {
+    interface IDataMapper {
+        + save(User user)
+        + findById(int id): User
+        + update(User user)
+        + delete(User user)
+    }
+
+    class User {
+        - id: int
+        - username: String
+        - email: String
+        + User(int id, String username, String email)
+        + getId(): int
+        + setId(int id)
+        + getUsername(): String
+        + setUsername(String username)
+        + getEmail(): String
+        + setEmail(String email)
+    }
+
+    class UserMapper {
+        - userMap: Map<Integer, User>
+        + UserMapper()
+        + save(User user)
+        + findById(int id): User
+        + update(User user)
+        + delete(User user)
+    }
+
+    IDataMapper <|.. UserMapper
+    UserMapper "1" *-- "*" User
+}
+@enduml

@@ -19,7 +19,7 @@ public class Greeting {
     }
 }
 
-public class Main {
+public class datamapper {
     public static void main(String[] args) {
         Greeting greeting = new Greeting("informal");
         greeting.greet();

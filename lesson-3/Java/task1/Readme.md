@@ -30,7 +30,7 @@ public class Book {
     }
 }
 
-public class Main {
+public class datamapper {
     public static void main(String[] args) {
         Book book = new Book("Властелин Колец", "Толкин");
         book.save();
