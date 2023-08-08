@@ -19,7 +19,7 @@ package task2;
  *     }
  * }
  *
- * public class Main {
+ * public class dependency_rule.presentation.Main {
  *     public static void main(String[] args) {
  *         Greeting greeting = new Greeting("informal");
  *         greeting.greet();

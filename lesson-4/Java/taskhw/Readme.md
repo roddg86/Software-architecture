@@ -5,6 +5,8 @@
 
 <details> 
   <summary>Кейс</summary>
+
+```java
 // Класс для геометрических фигур
 abstract class Shape {
     // Общие поля и методы для всех геометрических фигур
@@ -93,4 +95,5 @@ System.out.println("Периметр круга: " + circle.getPerimeter());
         System.out.println("Периметр треугольника: " + triangle.getPerimeter());
     }
 }
+```
 </details>

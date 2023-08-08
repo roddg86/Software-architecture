@@ -35,8 +35,8 @@
 //    }
 //}
 //
-//// Класс "Main"
-//public class Main {
+//// Класс "dependency_rule.presentation.Main"
+//public class dependency_rule.presentation.Main {
 //    public static void main(String[] args) {
 //        UserInterface userInterface = new UserInterface();
 //        userInterface.start();
