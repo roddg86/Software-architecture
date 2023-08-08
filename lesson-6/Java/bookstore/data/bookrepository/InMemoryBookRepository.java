@@ -39,18 +39,16 @@ public class InMemoryBookRepository implements BookRepository {
      * Обновляет информацию о книге в репозитории.
      * Ищет книгу с тем же ID и заменяет ее на новую книгу.
      *
-     * @param book Обновленная книга.
+     * @param updatedBook Обновленная книга.
      */
-    public void updateBook(Book book) {
-        boolean found = false;
-        int index = 0;
-        while (!found && index < books.size()) {
-            Book currentBook = books.get(index);
-            if (currentBook.getId().equals(book.getId())) {
-                books.set(index, book);
-                found = true;
+    @Override
+    public void updateBook(Book updatedBook) {
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            if (book.getId().equals(updatedBook.getId())) {
+                books.set(i, updatedBook);
+                break;
             }
-            index++;
         }
     }
 
@@ -59,23 +57,19 @@ public class InMemoryBookRepository implements BookRepository {
      *
      * @return Список всех книг.
      */
+    @Override
     public List<Book> getAllBooks() {
-        return books;
+        return new ArrayList<>(books);
     }
 
     /**
      * Выводит информацию о всех книгах на экран.
      *
-     * @param bookRepository Репозиторий книг, из которого нужно получить книги.
      */
-    public void printAllBooks(BookRepository bookRepository) {
-        List<Book> allBooks = bookRepository.getAllBooks();
-        for (Book book : allBooks) {
-            System.out.println(
-                    "id: " + book.getId()
-                            + ", Книга: " + book.getTitle()
-                            + ", Автор: " + book.getAuthor()
-                            + ", Цена: $" + book.getPrice());
+    @Override
+    public void printAllBooks() {
+        for (Book book : books) {
+            System.out.println(book.getTitle() + " by " + book.getAuthor() + " - $" + book.getPrice());
         }
     }
 }

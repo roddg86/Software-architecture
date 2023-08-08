@@ -15,11 +15,6 @@
 [KISS DRY YAGNI](#kiss-dry-yagni)  
 
 
-
-
-
-
-
 ## UML диаграмма классов
 
 UML происходит от Unified Modeling Language, 

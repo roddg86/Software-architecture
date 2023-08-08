@@ -1,29 +1,23 @@
 package bookstore.presentation;
 
+import bookstore.data.bookrepository.BookOperationHandler;
+import bookstore.data.bookrepository.BookRepository;
 import bookstore.data.bookrepository.InMemoryBookRepository;
-import bookstore.domain.Book;
 
 public class Main {
+
     public static void main(String[] args) {
+        BookRepository bookRepository = new InMemoryBookRepository();
 
-        InMemoryBookRepository bookRepository = new InMemoryBookRepository();
+        BookOperationHandler operationHandler = new BookOperationHandler(bookRepository);
 
-        // Добавляем книги в хранилище
-        Book book3 = new Book("3", "Clean Code", "Robert C. Martin", 34.99);
-        Book book4 = new Book("4", "Effective Java", "Joshua Bloch", 29.99);
-        bookRepository.addBook(book3);
-        bookRepository.addBook(book4);
+        operationHandler.addBook("3", "Clean Code", "Robert C. Martin", 34.99);
+        operationHandler.addBook("4", "Effective Java", "Joshua Bloch", 29.99);
 
-        // Удаляем книги из хранилища
-        bookRepository.removeBook(book4);
+        operationHandler.removeBook("4");
 
-        // Создаем новый экземпляр с обновлением
-        book3 = new Book("3", "Clean Code", "Robert C. Martin", 70.99);
+        operationHandler.updateBook("3", "Clean Code", "Robert C. Martin", 70.99);
 
-        // Обновляем книгу в хранилище
-        bookRepository.updateBook(book3);
-
-        // Получаем список всех книг в хранилище
-        bookRepository.printAllBooks(bookRepository);
+        operationHandler.printAllBooks();
     }
 }

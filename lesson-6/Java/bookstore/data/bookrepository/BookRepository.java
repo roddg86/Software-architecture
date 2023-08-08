@@ -5,7 +5,7 @@ import bookstore.domain.Book;
 import java.util.List;
 
 // Интерфейс для репозитория книг
-interface BookRepository {
+public interface BookRepository {
     // Метод для добавления книги
     void addBook(Book book);
 
@@ -13,12 +13,12 @@ interface BookRepository {
     void removeBook(Book book);
 
     // Метод для обновления книги
-    void updateBook(Book book);
+    void updateBook(Book updatedBook);
 
     // Метод для получения всех книг
     List<Book> getAllBooks();
 
     // Метод для вывода всех книг
-    void printAllBooks(BookRepository bookRepository);
+    void printAllBooks();
 
 }
