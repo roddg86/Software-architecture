@@ -1,0 +1,82 @@
+@startyaml
+
+classes:
+  - name: Cocktail
+    properties:
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: ingredients
+        type: List<Ingredient>
+      - name: recipe
+        type: Recipe
+      - name: image
+        type: Image
+
+  - name: CocktailBar
+    properties:
+      - name: cocktails
+        type: List<Cocktail>
+      - name: users
+        type: List<User>
+    methods:
+      - name: createCocktail
+        parameters:
+          - name: name
+            type: String
+          - name: description
+            type: String
+          - name: ingredients
+            type: List<Ingredient>
+          - name: recipe
+            type: Recipe
+        return_type: Cocktail
+      - name: editCocktail
+        parameters:
+          - name: cocktail
+            type: Cocktail
+          - name: name
+            type: String
+          - name: description
+            type: String
+          - name: ingredients
+            type: List<Ingredient>
+          - name: recipe
+            type: Recipe
+        return_type: void
+      - name: saveCocktail
+        parameters:
+          - name: cocktail
+            type: Cocktail
+        return_type: void
+
+  - name: User
+    properties:
+      - name: name
+        type: String
+      - name: email
+        type: String
+      - name: password
+        type: String
+      - name: savedCocktails
+        type: List<Cocktail>
+
+  - name: Ingredient
+    properties:
+      - name: name
+        type: String
+      - name: description
+        type: String
+
+  - name: Recipe
+    properties:
+      - name: steps
+        type: List<String>
+
+  - name: Image
+    properties:
+      - name: path
+        type: String
+
+@endyaml

@@ -1,0 +1,41 @@
+@startuml
+
+left to right direction
+
+actor User as "Пользователь"
+
+rectangle "Cocktail Bar" {
+  usecase "Создание коктейля" as CreateCocktail
+  usecase "Редактирование коктейля" as EditCocktail
+  usecase "Просмотр деталей коктейля" as ViewCocktailDetails
+  usecase "Сохранение коктейля" as SaveCocktail
+  usecase "Поделиться коктейлем" as ShareCocktail
+
+  User --> CreateCocktail : Ввод информации о коктейле
+  User --> EditCocktail : Выбор и редактирование коктейля
+  User --> ViewCocktailDetails : Выбор коктейля для просмотра
+  User --> SaveCocktail : Выбор и сохранение коктейля
+  User --> ShareCocktail : Выбор и поделиться коктейлем
+
+  CreateCocktail --> (Ввод информации о коктейле)
+  EditCocktail --> (Выбор и редактирование коктейля)
+  ViewCocktailDetails --> (Выбор коктейля для просмотра)
+  SaveCocktail --> (Выбор и сохранение коктейля)
+  ShareCocktail --> (Выбор и поделиться коктейлем)
+
+  usecase "Загрузка картинки" as UploadImage
+  CreateCocktail --> UploadImage : Загрузка картинки
+
+  usecase "Указание подробного описания коктейля" as SpecifyCocktailDescription
+  CreateCocktail --> SpecifyCocktailDescription : Указание подробного описания коктейля
+  EditCocktail --> SpecifyCocktailDescription : Указание подробного описания коктейля
+
+  usecase "Сохранение личного списка" as SavePersonalList
+  CreateCocktail --> SavePersonalList : Сохранение коктейля в личном списке
+  EditCocktail --> SavePersonalList : Сохранение изменений в личном списке
+
+  usecase "Поделиться через социальные сети" as ShareViaSocialMedia
+  ShareCocktail --> ShareViaSocialMedia : Поделиться через социальные сети
+}
+
+@enduml

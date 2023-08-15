@@ -1,0 +1,46 @@
+
+@startuml
+
+class Cocktail {
+  - name: String
+  - description: String
+  - ingredients: List<Ingredient>
+  - recipe: Recipe
+}
+
+class CocktailBar {
+  - cocktails: List<Cocktail>
+  + createCocktail(name: String, description: String, ingredients: List<Ingredient>, recipe: Recipe): Cocktail
+  + editCocktail(cocktail: Cocktail, name: String, description: String, ingredients: List<Ingredient>, recipe: Recipe): void
+  + saveCocktail(cocktail: Cocktail): void
+}
+
+class User {
+  - name: String
+  - email: String
+  - password: String
+  - savedCocktails: List<Cocktail>
+}
+
+class Ingredient {
+  - name: String
+  - description: String
+}
+
+class Recipe {
+  - steps: List<String>
+}
+
+class Image {
+  - path: String
+}
+
+CocktailBar "1" o-- "0..*" Cocktail : Aggregation
+CocktailBar "1" o-- "0..*" User : Aggregation
+Cocktail "1" *-- "0..*" Ingredient : Composition
+Cocktail "1" --> "1" Recipe : Association
+Cocktail "1" -- "0..1" Image : Association
+
+@enduml
+
+
