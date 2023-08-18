@@ -14,6 +14,7 @@
 [Критерии чистой архитектуры](#критерии-чистой-архитектуры)  
 [KISS DRY YAGNI](#kiss-dry-yagni)  
 [Архитектура прикладных приложений MVC MVP MVVM](#архитектура-прикладных-приложений-mvc-mvp-mvvm)  
+[Rest Api Json](#rest-api-json)  
 
 
 
@@ -540,3 +541,52 @@ YAGNI предполагает, что не следует добавлять ф
 - RIBS  
 
 [Использование шаблона посредника в MVVM / WPF](https://www.technical-recipes.com/2016/using-the-mediator-pattern-in-mvvm-wpf/)  
+
+### Rest Api Json
+
+#### POST запросы
+
+fetch('http://localhost:8080/users', { method: 'POST' })
+.then(response => response.text())
+.then(data => console.log(data));
+
+fetch('http://localhost:8080/users/1', { method: 'DELETE' })
+.then(response => response.text())
+.then(data => console.log(data));
+
+![POST.jpg](lesson-9%2Fimg%2FPOST.jpg)
+
+### Запросы через PowerShwell
+
+Invoke-WebRequest -Uri http://localhost:8080/users -Method POST
+Invoke-WebRequest -Uri http://localhost:8080/books -Method POST
+
+Invoke-WebRequest -Uri http://localhost:8080/users -Method GET
+Invoke-WebRequest -Uri http://localhost:8080/books -Method GET
+
+Invoke-WebRequest -Uri http://localhost:8080/books/1 -Method GET
+
+Invoke-WebRequest -Uri http://localhost:8080/users/1 -Method DELETE
+Invoke-WebRequest -Uri http://localhost:8080/books/1 -Method DELETE
+
+Invoke-RestMethod -Uri "http://localhost:8080/books/1" -Method Put -ContentType "application/json" -Body '{"title": "NewBook", "author": "NewAutor", "year": 2022}'
+
+
+#### HTTP и REST
+
+HTTP - протокол передачи данных в сети, используется для взаимодействия между клиентом и сервером.
+REST (Representational State Transfer) - архитектурный стиль, который определяет принципы для построения веб-сервисов.
+REST API - интерфейс для взаимодействия между клиентами и серверами по принципам REST.
+JSON (JavaScript Object Notation):
+
+JSON - легкий формат обмена данными, основанный на синтаксисе JavaScript.
+JSON представляет данные в виде пар "ключ-значение" и поддерживает массивы и вложенные структуры.
+Часто используется для передачи данных между клиентом и сервером в RESTful API.
+Apache Maven:
+
+Maven - инструмент для автоматизации сборки проектов, управления зависимостями и генерации документации.
+Основные понятия Maven: проект, артефакт, зависимость, цель, плагин.
+Файл "pom.xml" содержит настройки проекта, зависимости и инструкции для сборки.
+
+
+
